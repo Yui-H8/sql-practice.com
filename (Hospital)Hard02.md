@@ -21,3 +21,13 @@ FROM patients;
 -- Use CAST(variable_name AS FLOAT) function if you are dividing by two variables.
 ;
 ```
+Answer 2
+```SQL
+SELECT
+  patient_id,
+  weight,
+  height,
+  weight / power(CAST(height AS float) / 100, 2) >= 30 AS obese
+FROM patients
+;
+```
