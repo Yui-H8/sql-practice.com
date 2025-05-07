@@ -1,14 +1,12 @@
 ### Hard
-Q.01  
-* Show first name, last name, and gender of patients whose gender is 'M'
+Q.08  
+* Show the percent of patients that have 'M' as their gender. Round the answer to the nearest hundreth number and in percent form.
 
 ---
 ```SQL
 SELECT
-  first_name,
-  last_name,
-  gender
-FROM patients
-WHERE gender = "M"
+  round(100 * avg(gender = 'M'), 2) || '%' AS percent_of_male_patients
+FROM
+  patients
 ;
 ```
