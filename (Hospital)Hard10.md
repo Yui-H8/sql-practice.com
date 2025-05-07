@@ -11,3 +11,12 @@ order by
   province_name
 ;
 ```
+Answer2
+```sql
+select province_name
+from province_names
+order by
+  (not province_name = 'Ontario'),
+  province_name
+;
+```
