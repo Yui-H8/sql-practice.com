@@ -26,3 +26,12 @@ FROM (
   )
 WHERE n_male > n_female
 ```
+Answer3
+```SQL
+SELECT pr.province_name
+FROM patients AS pa
+  JOIN province_names AS pr ON pa.province_id = pr.province_id
+GROUP BY pr.province_name
+HAVING
+  SUM(gender = 'M') > SUM(gender = 'F');
+```
