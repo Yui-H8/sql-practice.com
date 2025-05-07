@@ -10,3 +10,9 @@ FROM
   patients
 ;
 ```
+Answer2
+```SQL
+SELECT 
+   CONCAT(ROUND(SUM(gender='M') / CAST(COUNT(*) AS float), 4) * 100, '%')
+FROM patients;
+```
